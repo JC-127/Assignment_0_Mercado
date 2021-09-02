@@ -1,15 +1,10 @@
 abstract class Shape (_name : String) {
     var name = _name
 
-    open fun getArea() {
-        return 0.0;
-    }//end getArea()
+    //Will ask the user for a shape
+    print("Please enter a shape")
+    name = sc.nextString()
 
-    open fun setDimensions() {
+    //should call a function to direct calculations based on the shape
 
-    }//end setDimensions()
-
-    fun printDimensions() {
-        println("No dimensions");
-    }//end fun printDimensions()
 }//end class shape()
