@@ -1,5 +1,7 @@
 abstract class Shape (_name : String) {
+
     var name = _name
+    val sc = Scanner(System.'in')
 
     //Will ask the user for a shape
     print("Please enter a shape")
