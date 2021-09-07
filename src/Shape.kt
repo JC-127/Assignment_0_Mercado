@@ -1,12 +1,13 @@
 abstract class Shape (_name : String) {
 
     var name = _name
-    val sc = Scanner(System.'in')
 
-    //Will ask the user for a shape
-    print("Please enter a shape")
-    name = sc.nextString()
+    fun getArea() {
+        return 0,0
+    }//end getArea()
 
-    //should call a function to direct calculations based on the shape
+    fun printDimensions() {
+        println("No Dimensions")
+    }//end printDimensions
 
 }//end class shape()

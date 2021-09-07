@@ -1,21 +1,30 @@
-class SquareShape (_name : String, varS : String) {
+class Square : Shape() {
 
-    varS = _name
-    val s // side of the square
+    fun setDimensions() {
+        println("Enter the Length of the Square: ")
+        val sideLength = readLine()
+        println("Enter the Height of the Square: ")
+        val heightLength = readLine()
+        getArea(heightLength, sideLength)
+    }//end setDimension()
 
-    val sc = Scanner(System.'in')
+    //function that will calculate Area of a Square
+    fun getArea(heightLength: String?, sideLength: String?) {
 
-    println("Enter the measurement for the side of the Square")
-    s = sc.nextDouble()
+        val sideOfSquare = sideLength!!.toInt()
+        val sideOfSquare2 = heightLength!!.toInt()
 
-    fun getArea() {
-
-        AreaS
-
+        if (sideOfSquare == sideOfSquare2) {
+            val AreaOfSquare = (sideOfSquare * sideOfSquare)
+            printDimensions(AreaOfSquare)
+        }//end if()
+        else if (sideOfSquare != sideOfSquare2){
+            val AreaOfSquare = (sideOfSquare * sideOfSquare2)
+            printDimensions(AreaOfSquare)
+        }//end else()
     }//end getArea()
 
-    fun printDimensions() {
-
+    private fun printDimensions(AreaOfSquare: Int) {
+        print("Area of Square is: $AreaOfSquare")
     }//end printDimensions()
-
-}//end class SquareShape
+}//end class Square()
