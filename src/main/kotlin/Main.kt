@@ -50,9 +50,16 @@ class Square : Shape() {
     fun getArea(heightLength: String?, sideLength: String?) {
 
         val sideOfSquare = sideLength!!.toInt()
-        val AreaOfSquare = (sideOfSquare * sideOfSquare)
-        printDimensions(AreaOfSquare)
-        //print("Area of Square : $AreaOfSquare")
+        val sideOfSquare2 = heightLength!!.toInt()
+
+        if (sideOfSquare == sideOfSquare2) {
+            val AreaOfSquare = (sideOfSquare * sideOfSquare)
+            printDimensions(AreaOfSquare)
+        }//end if()
+        else if (sideOfSquare != sideOfSquare2){
+            val AreaOfSquare = (sideOfSquare * sideOfSquare2)
+            printDimensions(AreaOfSquare)
+        }//end else()
     }//end getArea()
 
     private fun printDimensions(AreaOfSquare: Int) {
@@ -63,21 +70,31 @@ class Square : Shape() {
 //TRIANGLE CLASS
 class Triangle : Shape() {
 
-    fun setDimension() {
-        println("")
+    fun setDimensions() {
+
+        println("Enter side a: ")
+        val Ta = readLine()
+        println("Enter side b: ")
+        val Tb = readLine()
+        println("Enter side c: ")
+        val Tc = readLine()
+        getArea(Ta, Tb, Tc)
     }//end setDimension()
 
     //will calculate area of a triangle using Heron's Formula
-    override fun getArea() {
+    fun getArea(Ta: String?, Tb: String?, Tc: String?) {
 
+        val si = (.5)
+        val TSa = Ta!!.toDouble()
+        val TSb = Tb!!.toDouble()
+        val TSc = Tc!!.toDouble()
+        val AreaOfTriangle = sqrt(si*(si-TSa)*(si-TSb)*(si-TSc)) //HERON'S FORMULA FOR TRIANGLE
+        printDimensions(AreaOfTriangle)
     }//end getArea()
 
-    /*
-    private fun printDimensions() {
-
-    }
-
-     */
+    private fun printDimensions(AreaOfTriangle : Double) {
+        println("Area of Triangle is: $AreaOfTriangle")
+    }//end printDimensions()
 }//end class Triangle
 /***********************************************************************************************************************/
 //CLASS EQUILATERAL TRIANGLE
@@ -93,7 +110,7 @@ class eTriangle : Shape() {
 
         val ETSide = ETLength!!.toDouble()
         val a = ETSide
-        val AreaOfET = (((a*a)*sqrt(3.0))/4) //SIMPLIFIED HERON'S FORMULA
+        val AreaOfET = (((a*a)*sqrt(3.0))/4) //HERON'S FORMULA FOR EQUILATERAL TRIANGLE
         printDimensions(AreaOfET)
     }//end getArea()
 
@@ -143,7 +160,7 @@ fun main(args: Array<String>) {
     else if (enteredVal2 == 3) {
         println("Triangle has been chosen")
         val triangle = Triangle()
-        //triangle.setDimensions()
+        triangle.setDimensions()
         triangle.getArea()
         //triangle.printDimensions()
     }//end else if()
